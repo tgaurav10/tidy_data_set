@@ -1,3 +1,5 @@
+## This is original code. Please refer to the README.md for the description
+
 test_x <- read.table("test/X_test.txt")
 train_x <- read.table("train/X_train.txt")
 test_sub <- read.table("test/subject_test.txt")
