@@ -1,13 +1,21 @@
 test_x <- read.table("test/X_test.txt")   //reads the data from the test set
+
 train_x <- read.table("train/X_train.txt")  //reads the data from the training set
+
 test_sub <- read.table("test/subject_test.txt") //reads the subjects from the test set
+
 train_sub <- read.table("train/subject_train.txt")  //reads the subjects from the training set
+
 test_y <- read.table("test/y_test.txt") //reads the activity labels from the test set
+
 train_y <- read.table("train/y_train.txt") //reads the activity labels from the training set
+
 features <- read.table("features.txt")  //reads the features
 
 colnames(test_x) <- features[,2]  //changes the column names to descriptive variable names
-colnames(train_x) <- features[,2] //changes the column names to descriptive variable names 
+
+colnames(train_x) <- features[,2] //changes the column names to descriptive variable names
+
 
 test <- data.frame(Subject= test_sub[,1], Activity= test_y[,1], test_x[,grepl("*-(mean|std)",colnames(test_x))])
 //extracts only those variables which contain the mean and std values
